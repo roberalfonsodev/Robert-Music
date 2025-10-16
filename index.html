@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Instrumentos 🎸</title>
+  <link rel="stylesheet" href="css/styleindex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo-nav" ><img class="logo" src="img/logo.png" alt=""></div>
+      <div class="title-nav"><h1>Robert Music</h1></div>
+      <div class="menu-nav"><img class="burguer-icon" src="img/menu-icon.png" alt=""></div>
+    </nav>
+
+    <div class="menu-desplegable" id="menu-desplegable">
+      <a href="#inicio">🏠 Inicio</a>
+      <a href="#carrito">🛒 Carrito</a>
+      <a href="#favoritos">⭐ Favoritos</a>
+      <a href="#contacto">📞 Contacto</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- === CATÁLOGO === -->
+    <section id="catalogo" class="catalogo"></section>
+
+    <!-- === CARRITO === -->
+    <section id="carrito">
+      <h2>🛒 Carrito</h2>
+      <div id="lista-carrito"></div>
+      <p id="total">Total: $0</p>
+      <button class="btn-confirmar" id="btn-confirmar">Confirmar pedido</button>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-nav" href="#catalogo"><button class="btn carrito"><img src="img/inicio.png" alt=""><br>Inicio</button></a>
+    <a class="footer-nav" href="#carrito"><button class="btn carrito"><img src="img/carrito.png" alt=""><br>Carrito</button></a>
+    <a class="footer-nav" href=""><button class="btn carrito"><img src="img/favorito.png" alt=""><br>Favoritos</button></a>
+  </footer>
+
+  <script src="script/scriptindex.js">
+  </script>
+</body>
+</html>
