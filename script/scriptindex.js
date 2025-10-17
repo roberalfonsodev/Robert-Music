@@ -1,3 +1,7 @@
+// ==== GUARDAR FAVORITOS EN LOCAL STORAGE ====
+//MOSTRAR LISTA DE FAVORITOS
+
+
 
 
     // ==== MENÚ DESPLEGABLE ====
@@ -5,10 +9,8 @@
     const menuDesplegable = document.getElementById("menu-desplegable");
     
     
-      // ==== NECESITO AGREGAR QUE LA ESTRELLA CAMBIE DE COLOR AL HACER CLICK
-    /*btnFavorito.addEventListener("click", () => {
-    btnFavorito.classList.toggle("active");
-    });*/
+
+
     
 
     menuIcon.addEventListener('click', () => {
@@ -16,7 +18,25 @@
       menuIcon.classList.toggle("active");
     });
 
-    
+    // 🔹 Cierra el menú al hacer clic en un enlace
+      menuDesplegable.querySelectorAll("a").forEach(link => 
+        link.addEventListener("click", () => {
+          menuDesplegable.classList.remove("active");
+          menuIcon.classList.remove("active");
+        })
+      );
+
+      // Cerrar el menú al hacer clic fuera de él
+      document.addEventListener("click", (e) => {
+        const clickDentroMenu = menuDesplegable.contains(e.target);
+        const clickEnIcono = menuIcon.contains(e.target);
+
+        if (!clickDentroMenu && !clickEnIcono) {
+          menuDesplegable.classList.remove("active");
+          menuIcon.classList.remove("active");
+        }
+      });
+          
 
 
 // ==== DATOS DEL CATÁLOGO ====
@@ -114,3 +134,10 @@
 
     // ==== INICIALIZAR ====
     mostrarCatalogo();
+
+    // ==== FAVORITOS ====
+    catalogo.addEventListener("click", (e) => {
+      if (e.target.classList.contains("btn-favorito")) {
+        e.target.classList.toggle("active"); // activa/desactiva la clase
+      }
+    });
